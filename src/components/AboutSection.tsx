@@ -1,7 +1,5 @@
-// File path: src/components/AboutSection.tsx
-
-import React, { useState } from "react";
-import "./AboutSection.module.css";
+import React, { useState } from 'react';
+import styles from './AboutSection.module.css';
 
 const AboutSection: React.FC = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
