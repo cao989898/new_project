@@ -16,17 +16,29 @@
 
 /* Hero Header */
 .hero-header {
-  background: url('/images/hero-background.jpg') no-repeat center center/cover;
+  background: linear-gradient(to right, #ff6600, #ff9933),
+    url('/images/hero-background.jpg') no-repeat center center/cover;
   color: #fff;
   text-align: center;
-  padding: 50px 20px;
+  padding: 70px 20px;
+  animation: fadeIn 1.5s;
 }
 .hero-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+  font-size: 3rem;
+  margin-bottom: 15px;
 }
 .hero-header p {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Video Section */
@@ -37,6 +49,10 @@
 .video-wrapper {
   position: relative;
   display: inline-block;
+  transition: transform 0.3s ease-in-out;
+}
+.video-wrapper:hover {
+  transform: scale(1.05);
 }
 .video-wrapper img {
   max-width: 100%;
@@ -51,9 +67,9 @@
   color: #fff;
   border: none;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 1.5rem;
+  width: 60px;
+  height: 60px;
+  font-size: 2rem;
   cursor: pointer;
 }
 
@@ -67,11 +83,15 @@
   gap: 20px;
 }
 .service-item {
-  background: #fff;
+  background: linear-gradient(to bottom, #fff, #f1f1f1);
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
   text-align: center;
+  transition: box-shadow 0.3s ease-in-out;
+}
+.service-item:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 .service-item h3 {
   font-size: 1.5rem;
@@ -82,6 +102,17 @@
 .testimonials {
   margin: 50px 0;
   text-align: center;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 .testimonial {
   background: #fff;
@@ -117,9 +148,28 @@
   overflow: hidden;
 }
 
+/* FAQ Section */
+.faq {
+  margin: 50px 0;
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.faq-item {
+  margin-bottom: 15px;
+}
+.faq-item h3 {
+  font-size: 1.2rem;
+  color: #ff6600;
+}
+.faq-item p {
+  font-size: 1rem;
+}
+
 /* Footer */
 .footer {
-  background: #333;
+  background: linear-gradient(to right, #333, #444)
   color: #fff;
   padding: 40px 20px;
 }
