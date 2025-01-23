@@ -71,7 +71,7 @@ const ServicesGrid = () => (
         },
       ].map((service, index) => (
         <div className={styles.serviceItem} key={index}>
-          <img src={service.icon} alt={service.title} className={styles.serviceIcon} />
+          <img src={service.icon} alt={`${service.title} Icon`} className={styles.serviceIcon} />
           <h3>{service.title}</h3>
           <p>{service.description}</p>
           <button className={styles.moreInfoButton}>More Info →</button>
@@ -85,10 +85,10 @@ const ServiceRequestForm = () => (
   <div className={styles.serviceRequestForm}>
     <h2>Speed Service Request</h2>
     <form>
-      <input type="text" placeholder="Full Name" />
-      <input type="email" placeholder="Email Address" />
-      <input type="tel" placeholder="Phone Number" />
-      <input type="date" placeholder="mm/dd/yyyy" />
+      <input type="text" placeholder="Full Name" aria-label="Full Name" />
+      <input type="email" placeholder="Email Address" aria-label="Email Address" />
+      <input type="tel" placeholder="Phone Number" aria-label="Phone Number" />
+      <input type="date" placeholder="mm/dd/yyyy" aria-label="Preferred Date" />
       <button type="submit" className={styles.getServiceButton}>Get Service →</button>
     </form>
   </div>
@@ -145,7 +145,7 @@ const AllServices = () => {
             <iframe
               width="560"
               height="315"
-              src="https://www.youtube.com/embed/example-video"
+                src="https://www.youtube.com/embed/example-video"
               title="Service Video"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -160,4 +160,4 @@ const AllServices = () => {
   );
 };
 
-export default AllServices;  
+export default AllServices;
