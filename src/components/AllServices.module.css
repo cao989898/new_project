@@ -1,0 +1,163 @@
+// File path: src/components/AllServices.tsx
+
+import React, { useState } from 'react';
+import styles from './AllServices.module.css';
+
+// Subcomponents for modularity
+const HeroSection = () => (
+  <div className={styles.heroHeader}>
+    <h1>All Services</h1>
+    <p>Browse Our Popular Electrical Services</p>
+    <p>Get your electrical installation and repair work done in the most effective way.</p>
+  </div>
+);
+
+const VideoSection = ({ openVideoPopup }: { openVideoPopup: () => void }) => (
+  <div className={styles.videoSection}>
+    <h2>How Do We Provide Electricity Service?</h2>
+    <p>We are at your service for a correct repair.</p>
+    <div className={styles.videoWrapper} onClick={openVideoPopup}>
+      <img src="/images/service-video-thumbnail.jpg" alt="Service Overview Video" />
+      <button className={styles.videoPlayButton}>▶</button>
+    </div>
+  </div>
+);
+
+const ServicesGrid = () => (
+  <div className={styles.servicesList}>
+    <h2>What Electrical Services Do We Offer?</h2>
+    <p>We provide the most robust service with affordable budgets.</p>
+    <div className={styles.servicesGrid}>
+      {[
+        {
+          title: 'Electrical Installation',
+          description: 'We carry out the maintenance, repair, and installation of electrical systems safely and professionally.',
+          icon: '/images/lightbulb-icon-1.png',
+        },
+        {
+          title: 'Indoor Lighting',
+          description: 'We build electricity interior lighting systems in the most modern way for homes, offices, and gardens.',
+          icon: '/images/lightbulb-icon-2.png',
+        },
+        {
+          title: 'Electric Panels',
+          description: 'We install panel electrical systems in your home, workplace, industry, and old places in a correct and planned way.',
+          icon: '/images/lightbulb-icon-3.png',
+        },
+        {
+          title: 'Electrical Repairs',
+          description: 'We provide professional electrical repair and repair services with our highly trained and expert electrician masters.',
+          icon: '/images/lightbulb-icon-4.png',
+        },
+        {
+          title: 'Automation Systems',
+          description: 'We reduce your workload by integrating professional automation systems in all electrical works.',
+          icon: '/images/lightbulb-icon-5.png',
+        },
+        {
+          title: 'Security Systems',
+          description: 'As the safety system is the most important detail cables and electrical systems, your safety systems should be structured correctly.',
+          icon: '/images/lightbulb-icon-6.png',
+        },
+        {
+          title: 'Garden Lighting',
+          description: 'We build electricity interior lighting systems for the most modern way for homes, offices, and gardens.',
+          icon: '/images/lightbulb-icon-7.png',
+        },
+        {
+          title: 'Panel Assembly',
+          description: 'We provide professional electrical repair and repair services with our highly trained and expert electrician masters.',
+          icon: '/images/lightbulb-icon-8.png',
+        },
+      ].map((service, index) => (
+        <div className={styles.serviceItem} key={index}>
+          <img src={service.icon} alt={service.title} className={styles.serviceIcon} />
+          <h3>{service.title}</h3>
+          <p>{service.description}</p>
+          <button className={styles.moreInfoButton}>More Info →</button>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+const ServiceRequestForm = () => (
+  <div className={styles.serviceRequestForm}>
+    <h2>Speed Service Request</h2>
+    <form>
+      <input type="text" placeholder="Full Name" />
+      <input type="email" placeholder="Email Address" />
+      <input type="tel" placeholder="Phone Number" />
+      <input type="date" placeholder="mm/dd/yyyy" />
+      <button type="submit" className={styles.getServiceButton}>Get Service →</button>
+    </form>
+  </div>
+);
+
+const FooterSection = () => (
+  <footer className={styles.footer}>
+    <div className={styles.footerContent}>
+      <div>
+        <h3>Customer Service</h3>
+        <p>+123 456 78 90 01</p>
+        <p>example@example.com</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Appointment</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Visit Us</h3>
+        <p>New Jersey, USA</p>
+      </div>
+    </div>
+    <p className={styles.footerBottom}>© 2024 Elektra - All Rights Reserved.</p>
+  </footer>
+);
+
+const AllServices = () => {
+  const [videoPopup, setVideoPopup] = useState(false);
+
+  const openVideoPopup = () => {
+    setVideoPopup(true);
+  };
+
+  const closeVideoPopup = () => {
+    setVideoPopup(false);
+  };
+
+  return (
+    <section className={styles.allServicesSection}>
+      <HeroSection />
+      <ServicesGrid />
+      <VideoSection openVideoPopup={openVideoPopup} />
+      <ServiceRequestForm />
+
+      {videoPopup && (
+        <div className={styles.videoPopup}>
+          <div className={styles.videoPopupContent}>
+            <button className={styles.closeButton} onClick={closeVideoPopup}>X</button>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/example-video"
+              title="Service Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      )}
+
+      <FooterSection />
+    </section>
+  );
+};
+
+export default AllServices;  
