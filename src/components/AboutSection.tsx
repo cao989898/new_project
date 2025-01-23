@@ -1,40 +1,121 @@
-export const AboutSection = () => {
+// File path: src/components/AboutSection.tsx
+
+import React from "react";
+import "./AboutSection.module.css";
+
+const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <img 
-              src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80" 
-              alt="Electrician at work" 
-              className="rounded-lg shadow-xl"
-            />
-          </div>
-          <div>
-            <h2 className="text-4xl font-bold mb-6">30+ Years Authorized Experience In Electrical Services Industry</h2>
-            <p className="text-gray-600 mb-6">
-              Our company has become one of the world's leading companies in the industry with the knowledge, experience and expertise it has gained since its establishment.
-            </p>
-            <div className="space-y-4">
-              <div className="flex items-center">
-                <span className="text-[#FF7315] mr-2">✓</span>
-                <span>Licensed & Insured Electricians</span>
-              </div>
-              <div className="flex items-center">
-                <span className="text-[#FF7315] mr-2">✓</span>
-                <span>Emergency Service Available</span>
-              </div>
-              <div className="flex items-center">
-                <span className="text-[#FF7315] mr-2">✓</span>
-                <span>100% Satisfaction Guaranteed</span>
-              </div>
-            </div>
-            <button className="mt-8 bg-[#FF7315] text-white px-8 py-3 rounded-full hover:bg-[#E65C00] transition-colors">
-              Learn More →
-            </button>
-          </div>
+    <section className="about-section">
+      <header className="hero-header">
+        <div className="hero-content">
+          <h1>Welcome to Elektra</h1>
+          <p>Your trusted partner for professional electrical services.</p>
         </div>
+      </header>
+      <div className="container">
+        <section className="about-details">
+          <h2>Who We Are</h2>
+          <p>
+            At Elektra, our highly skilled electricians are dedicated to
+            providing exceptional service. Whether it’s residential, commercial,
+            or industrial electrical solutions, we ensure safety, reliability,
+            and efficiency in every project.
+          </p>
+          <p>
+            With years of industry experience, we are committed to exceeding
+            customer expectations by offering top-notch services at competitive
+            prices.
+          </p>
+        </section>
+        <section className="our-services">
+          <h2>Our Services</h2>
+          <div className="service-item">
+            <h3>Residential Electrical Services</h3>
+            <p>
+              We provide comprehensive residential electrical services to ensure
+              your home is safe and energy-efficient.
+            </p>
+          </div>
+          <div className="service-item">
+            <h3>Commercial Electrical Solutions</h3>
+            <p>
+              Our team specializes in delivering tailored electrical solutions
+              for businesses, ensuring minimal downtime.
+            </p>
+          </div>
+          <div className="service-item">
+            <h3>Industrial Installations</h3>
+            <p>
+              From heavy machinery setups to system upgrades, we handle
+              industrial installations with precision.
+            </p>
+          </div>
+        </section>
+        <section className="safety-promise">
+          <h2>Our Safety Promise</h2>
+          <p>
+            At Elektra, safety is our top priority. Our electricians are trained
+            to adhere to the highest safety standards to protect both your property
+            and our workers. We continuously update our practices to comply with
+            the latest safety regulations.
+          </p>
+        </section>
+        <section className="sustainability">
+          <h2>Commitment to Sustainability</h2>
+          <p>
+            Elektra is dedicated to environmental responsibility. We utilize
+            energy-efficient practices and advocate for sustainable solutions
+            in every project we undertake. Our goal is to minimize environmental
+            impact while delivering excellent results.
+          </p>
+        </section>
+        <section className="testimonials">
+          <h2>What Our Clients Say</h2>
+          <div className="testimonial">
+            <blockquote>
+              "Elektra transformed our office’s electrical system flawlessly. Their team was professional and thorough."
+            </blockquote>
+            <p>- Sarah J., Business Owner</p>
+          </div>
+          <div className="testimonial">
+            <blockquote>
+              "Their expertise and commitment to safety gave us peace of mind. Highly recommend Elektra!"
+            </blockquote>
+            <p>- Mike R., Homeowner</p>
+          </div>
+        </section>
+        <section className="faq">
+          <h2>Frequently Asked Questions</h2>
+          <div className="faq-item">
+            <h3>What services do you offer?</h3>
+            <p>We provide a wide range of electrical solutions, including residential, commercial, and industrial services.</p>
+          </div>
+          <div className="faq-item">
+            <h3>Are your electricians licensed?</h3>
+            <p>Yes, all our electricians are fully licensed and highly experienced in their field.</p>
+          </div>
+          <div className="faq-item">
+            <h3>How can I get a quote?</h3>
+            <p>You can contact us through our website or call us directly to discuss your requirements and get a free quote.</p>
+          </div>
+        </section>
+        <section className="gallery">
+          <h2>Gallery</h2>
+          <div className="gallery-grid">
+            <img src="/images/gallery-1.jpg" alt="Project 1" />
+            <img src="/images/gallery-2.jpg" alt="Project 2" />
+            <img src="/images/gallery-3.jpg" alt="Project 3" />
+            <img src="/images/gallery-4.jpg" alt="Project 4" />
+          </div>
+        </section>
+        <section className="call-to-action">
+          <h2>Ready to Work with Us?</h2>
+          <p>Contact us today to discuss your electrical needs and let our experts help you!</p>
+          <button className="cta-button">Contact Us</button>
+        </section>
       </div>
     </section>
   );
 };
+
+export default AboutSection;
